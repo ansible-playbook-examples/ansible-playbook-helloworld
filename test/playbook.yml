@@ -1,0 +1,8 @@
+---
+- name: use an example of a versioned role
+  hosts: "{{ useGroupName }}"
+  user: ansible
+  become: true
+
+  roles:
+  - role-versioning-example
