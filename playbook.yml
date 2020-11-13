@@ -1,0 +1,21 @@
+---
+# HelloWorld!
+
+- name: Playbook | ansible-playbook-helloworld
+  hosts: all
+  tasks:
+  - name: Playbook | Display a debug message
+    debug:
+      msg: "Hello World!"
+
+  - name: Playbook | run a bash script
+    script: scripts/uname.sh
+    register: hello
+  - debug: 
+      msg: "{{ hello.stdout }}"
+
+  - name: Playbook | run a bash script
+    script: scripts/whoami.sh
+    register: hello
+  - debug: 
+      msg: "{{ hello.stdout }}"
