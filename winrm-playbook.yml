@@ -1,0 +1,19 @@
+---
+# HelloWorld!
+
+- name: Playbook | ansible-playbook-helloworld
+  hosts: all
+  vars_prompt:
+  - name: ansible_user
+    prompt: enter username
+    private: no
+  - name: ansible_password
+    prompt: enter password
+    
+  vars:
+    ansible_connection: winrm
+    ansible_winrm_server_cert_validation: ignore
+  tasks:
+  - name: Playbook | Display a debug message
+    debug:
+      msg: "Hello World!"
