@@ -12,7 +12,7 @@
     
   vars:
     ansible_connection: winrm
-    ansible_winrm_transport: ntlm
+    ansible_winrm_transport: kerberos
     ansible_winrm_server_cert_validation: ignore
   tasks:
   - name: Playbook | Display a debug message
